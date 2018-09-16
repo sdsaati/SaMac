@@ -1,6 +1,14 @@
 dist: trusty
 sudo: false
 language: cpp
+compiler:
+  - g++
+os:
+  - linux
+
+branches:
+  only:
+  - master
 
 addons:
   apt:
@@ -13,3 +21,6 @@ script:
   - CXX=/usr/bin/g++-5 CC=/usr/bin/gcc-5 cmake .
   - cmake --build . -- -j2
   
+env:
+  global:
+  - LANG="en_US.UTF-8"
