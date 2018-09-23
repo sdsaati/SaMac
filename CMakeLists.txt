@@ -24,7 +24,7 @@ set(project_sources
 	mainwindow.cpp)
 
 qt5_wrap_ui(project_headers_wrapped ${project_ui})
-qt5_wrap_cpp(projcet_sources_moc ${project_headers})
+qt5_wrap_cpp(projcet_sources_moc ${project_sources})
 
 add_executable(MainExecutable
 	${project_headers} 
@@ -32,7 +32,7 @@ add_executable(MainExecutable
 	${project_sources_moc}
 	${project_headers_wrapped})
 
-target_link_libraries(MainExecutable
+target_link_libraries(MainExecutable PUBLIC
 	PUBLIC
 	Qt5::Core
 	Qt5::Gui
